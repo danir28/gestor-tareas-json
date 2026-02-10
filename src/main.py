@@ -1,0 +1,51 @@
+from .core.logic import agregar_tarea, listar_tareas, eliminar_tarea, completar_tarea
+from .utils.formato import mostrar_tareas
+
+tareas = []
+
+while True:
+    print()
+    print('1. Agregar tarea')
+    print('2. Listar tareas')
+    print('3. Completar tarea')
+    print('4. Eliminar tarea')
+    print('5. Salir')
+    
+    opcion = input('Seleccione una opción: ')
+    
+    if opcion == '1':
+        titulo = input('titulo: ')
+        descripcion = input('descripcion (opcional): ')
+        resultado = agregar_tarea(tareas, titulo, descripcion)
+        if resultado == 0:
+            print('Tarea agregada exitosamente.')
+        else:
+            print('Error al agregar tarea. El título no puede estar vacío.')
+    elif opcion == '2':
+        tareas_para_mostrar = listar_tareas(tareas)
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '3':
+        try:
+            indice = int(input('Ingrese el número de la tarea a completar: ')) - 1
+            resultado = completar_tarea(tareas, indice)
+            if resultado == 0:
+                print('Tarea completada exitosamente.')
+            else:
+                print('Error al completar tarea. Índice inválido.')
+        except ValueError:
+            print('Error: esa tarea no existe')
+    elif opcion == '4':
+        try:
+            indice = int(input('Ingrese el número de la tarea a eliminar: ')) - 1
+            resultado = eliminar_tarea(tareas, indice)
+            if resultado == 0:
+                print('Tarea eliminada exitosamente.')
+            else:
+                print('Error al eliminar tarea. Índice inválido.')
+        except ValueError:
+            print('Error: esa tarea no existe')
+    elif opcion == '5':
+        print('Saliendo del programa.')
+        break
+    else:
+        print('Opción no válida. Por favor, seleccione una opción del 1 al 5.')
