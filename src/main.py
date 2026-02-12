@@ -1,7 +1,10 @@
 from .core.logic import agregar_tarea, listar_tareas, eliminar_tarea, completar_tarea
 from .utils.formato import mostrar_tareas
+from .utils.persistencia import cargar_tareas, guardar_tareas
 
-tareas = []
+RUTA = 'tareas.json'
+
+tareas = cargar_tareas(RUTA)
 
 while True:
     print()
@@ -10,6 +13,7 @@ while True:
     print('3. Completar tarea')
     print('4. Eliminar tarea')
     print('5. Salir')
+    print()
     
     opcion = input('Seleccione una opción: ')
     
@@ -18,6 +22,7 @@ while True:
         descripcion = input('descripcion (opcional): ')
         resultado = agregar_tarea(tareas, titulo, descripcion)
         if resultado == 0:
+            guardar_tareas(tareas, RUTA)
             print('Tarea agregada exitosamente.')
         else:
             print('Error al agregar tarea. El título no puede estar vacío.')
@@ -29,6 +34,7 @@ while True:
             indice = int(input('Ingrese el número de la tarea a completar: ')) - 1
             resultado = completar_tarea(tareas, indice)
             if resultado == 0:
+                guardar_tareas(tareas, RUTA)
                 print('Tarea completada exitosamente.')
             else:
                 print('Error al completar tarea. Índice inválido.')
@@ -39,6 +45,7 @@ while True:
             indice = int(input('Ingrese el número de la tarea a eliminar: ')) - 1
             resultado = eliminar_tarea(tareas, indice)
             if resultado == 0:
+                guardar_tareas(tareas, RUTA)
                 print('Tarea eliminada exitosamente.')
             else:
                 print('Error al eliminar tarea. Índice inválido.')
