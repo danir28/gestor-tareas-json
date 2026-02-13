@@ -1,63 +1,56 @@
 # Gestor de Tareas (CLI)
 
-Proyecto CLI sencillo para gestionar tareas desarrollado en Python.
+Aplicación de línea de comandos desarrollada en Python para gestionar tareas con persistencia en archivo JSON.
 
-## Descripción
+Permite agregar, listar, completar y eliminar tareas manteniendo los datos guardados entre ejecuciones.
 
-Este repositorio contiene una aplicación de línea de comandos para crear, listar y administrar tareas.
-El código fuente está en el paquete `src` y organizado en módulos `core`, `models` y `utils`.
+Proyecto creado con fines educativos y de portfolio, aplicando separación por capas y buenas prácticas de organización del código.
 
-## Requisitos
+---
+
+## Funcionalidades
+
+- Agregar tareas
+- Listar tareas
+- Marcar tareas como completadas
+- Eliminar tareas
+- Guardado automático en `tareas.json`
+- Arquitectura modular (core / models / utils)
+
+---
+
+## Tecnologías
 
 - Python 3.8+
+- CLI (terminal)
+- JSON para persistencia de datos
 
-Opcionalmente, crea un entorno virtual antes de instalar dependencias:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-Si en el futuro hay dependencias, agrégalas a un `requirements.txt` e instala con:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Ejecutar la aplicación
-
-Desde la raíz del proyecto ejecuta:
-
-```bash
-python -m src.main
-```
-
-ó
-
-```bash
-python src/main.py
-```
+---
 
 ## Estructura del proyecto
 
-- `src/`: código fuente
-	- `core/`: lógica de la aplicación
-	- `models/`: modelos de datos
-	- `utils/`: utilidades y formateo
+gestor_tareas/
+src/
+main.py # interfaz CLI
+core/ # lógica de negocio
+models/ # entidades del dominio
+utils/ # formateo y persistencia
 
-## Git
+### Descripción de capas
 
-El repositorio ya está inicializado y vinculado a `origin` en GitHub.
+- **models** → define la entidad `Tarea`
+- **core** → reglas de negocio (agregar, completar, eliminar)
+- **utils** → impresión y guardado/carga JSON
+- **main** → interacción con el usuario
 
-Recomendaciones:
+Separar responsabilidades facilita mantenimiento, testing y escalabilidad.
 
-- Añade un archivo `.gitignore` para ignorar entornos virtuales y archivos temporales.
-- Considera añadir un `LICENSE` si quieres un permiso explícito.
+---
 
-## Contribuciones
+## Instalación
 
-Si quieres colaborar, crea un fork, abre una rama, añade cambios y envía un pull request.
+Opcionalmente crear entorno virtual:
 
-## Licencia
-
-Sin licencia especificada — agrega un `LICENSE` si deseas definirla.
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Linux / Mac
