@@ -6,7 +6,7 @@ ERROR = 1
 def agregar_tarea(tareas: list, titulo: str, descripcion: str = ""):
     if not titulo or not titulo.strip():
         return ERROR
-    tarea = Tarea(titulo, descripcion, False)
+    tarea = Tarea(titulo, descripcion)
     tareas.append(tarea)
     return OK
 

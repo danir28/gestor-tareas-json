@@ -1,7 +1,10 @@
 [
     {
+        "id": "6ffff27d-d640-4a62-b726-1d979684322c",
         "titulo": "GYM",
-        "descripcion": "entrenamiento",
-        "completada": false
+        "descripcion": "lunes pierna",
+        "completada": false,
+        "prioridad": false,
+        "fecha_creacion": "2026-02-14T13:27:58.710861"
     }
 ]
