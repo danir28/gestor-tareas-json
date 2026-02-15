@@ -10,8 +10,17 @@ def agregar_tarea(tareas: list, titulo: str, descripcion: str = ""):
     tareas.append(tarea)
     return OK
 
-def listar_tareas(tareas: list):
-    return tareas
+def listar_tareas(tareas, estado = None, prioridad = None):
+    resultado = tareas
+    
+    if estado == 'pendiente':
+        resultado = [t for t in resultado if not t.completada]
+    if estado == 'completo':
+        resultado = [t for t in resultado if t.completada]
+    if prioridad:
+        resultado = [t for t in resultado if t.prioridad == prioridad]
+        
+    return resultado
 
 def completar_tarea(tareas: list, indice: int):
     if indice < 0 or indice >= len(tareas):

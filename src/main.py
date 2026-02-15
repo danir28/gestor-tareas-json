@@ -12,7 +12,10 @@ while True:
     print('2. Listar tareas')
     print('3. Completar tarea')
     print('4. Eliminar tarea')
-    print('5. Salir')
+    print('5. Listar tareas pendientes')
+    print('6. Listar tareas completas')
+    print('7. Listar tareas por prioridad')
+    print('8. Salir')
     print()
     
     opcion = input('Seleccione una opción: ')
@@ -52,6 +55,16 @@ while True:
         except ValueError:
             print('Error: esa tarea no existe')
     elif opcion == '5':
+        tareas_para_mostrar = listar_tareas(tareas, estado='pendiente')
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '6':
+        tareas_para_mostrar = listar_tareas(tareas, estado='completo')
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '7':
+        prioridad = input('Ingrese la prioridad a filtrar (baja, media, alta): ')
+        tareas_para_mostrar = listar_tareas(tareas, prioridad=prioridad)
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '8':
         print('Saliendo del programa.')
         break
     else:
