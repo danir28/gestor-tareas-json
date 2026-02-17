@@ -15,7 +15,9 @@ while True:
     print('5. Listar tareas pendientes')
     print('6. Listar tareas completas')
     print('7. Listar tareas por prioridad')
-    print('8. Salir')
+    print('8. Ordenar por fecha')
+    print('9. Ordenar por prioridad')
+    print('10. Salir')
     print()
     
     opcion = input('Seleccione una opción: ')
@@ -23,7 +25,13 @@ while True:
     if opcion == '1':
         titulo = input('titulo: ')
         descripcion = input('descripcion (opcional): ')
-        resultado = agregar_tarea(tareas, titulo, descripcion)
+        prioridad = input('prioridad (baja, media, alta): ')
+        
+        if prioridad not in ['baja', 'media', 'alta']:
+            prioridad = 'media'
+            
+        resultado = agregar_tarea(tareas, titulo, descripcion, prioridad)
+        
         if resultado == 0:
             guardar_tareas(tareas, RUTA)
             print('Tarea agregada exitosamente.')
@@ -65,7 +73,13 @@ while True:
         tareas_para_mostrar = listar_tareas(tareas, prioridad=prioridad)
         mostrar_tareas(tareas_para_mostrar)
     elif opcion == '8':
+        tareas_para_mostrar = listar_tareas(tareas, ordenar_por='fecha')
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '9':
+        tareas_para_mostrar = listar_tareas(tareas, ordenar_por='prioridad')
+        mostrar_tareas(tareas_para_mostrar)
+    elif opcion == '10':
         print('Saliendo del programa.')
         break
     else:
-        print('Opción no válida. Por favor, seleccione una opción del 1 al 8.')
+        print('Opción no válida. Por favor, seleccione una opción del 1 al 10.')

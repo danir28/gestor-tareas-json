@@ -4,7 +4,23 @@
         "titulo": "GYM",
         "descripcion": "lunes pierna",
         "completada": false,
-        "prioridad": false,
+        "prioridad": "media",
         "fecha_creacion": "2026-02-14T13:27:58.710861"
+    },
+    {
+        "id": "3b6fb7ab-f184-4036-af9c-1b7678e4a25c",
+        "titulo": "Estudiar",
+        "descripcion": "Python",
+        "completada": false,
+        "prioridad": "media",
+        "fecha_creacion": "2026-02-17T10:38:38.759048"
+    },
+    {
+        "id": "495a0688-72f6-4460-8252-ffab95246959",
+        "titulo": "pescar",
+        "descripcion": "",
+        "completada": false,
+        "prioridad": "baja",
+        "fecha_creacion": "2026-02-17T10:47:44.114290"
     }
 ]

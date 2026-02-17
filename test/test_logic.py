@@ -10,6 +10,12 @@ def test_agregar_tarea_valida():
     assert tareas[0].titulo == "Estudiar"
     assert tareas[0].descripcion == "Python"
 
+def test_agregar_tarea_con_prioridad():
+    tareas = []
+    agregar_tarea(tareas, "Importante", "Algo", "alta")
+
+    assert tareas[0].prioridad == "alta"
+
 def test_agregar_tarea_titulo_vacio():
     tareas = []
     resultado = agregar_tarea(tareas, "", "Algo")
@@ -35,4 +41,14 @@ def test_listar_pendientes():
     
     assert len(pendientes) == 1
     assert pendientes[0].titulo == 'Uno'
+
+def test_ordenar_por_prioridad():
+    t1 = Tarea('A', prioridad='baja')
+    t2 = Tarea('B', prioridad='alta')
+    
+    tareas = [t1, t2]
+    
+    ordenadas = listar_tareas(tareas, ordenar_por='prioridad')
+    
+    assert ordenadas[0].titulo == 'B'
     
