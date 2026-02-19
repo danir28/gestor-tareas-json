@@ -23,6 +23,7 @@ Proyecto orientado a aplicar buenas prácticas de arquitectura, modularización,
 
 ## Estructura del Proyecto
 
+```bash
 gestor_tareas_json/
 │
 ├── src/
@@ -40,6 +41,7 @@ gestor_tareas_json/
 │
 ├── tareas.json
 └── README.md
+```
 
 ---
 
@@ -47,23 +49,31 @@ gestor_tareas_json/
 
 Clonar el repositorio:
 
+```bash
 git clone https://github.com/danir28/gestor-tareas-json.git
 cd gestor-tareas-json
+```
 
 Crear entorno virtual:
 
+```bash
 python3 -m venv venv
 source venv/bin/activate   # Mac/Linux
+```
 
 instalar dependencias:
 
+```bash
 pip install pytest
+```
 
 ---
 
 ## Ejecución
 
+```bash
 python3 -m src.main
+```
 
 ---
 
@@ -71,7 +81,9 @@ python3 -m src.main
 
 Ejecutar los tests con:
 
+```bash
 pytest
+```
 
 ---
 
