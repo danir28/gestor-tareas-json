@@ -1,56 +1,95 @@
-# Gestor de Tareas (CLI)
+## Gestor de Tareas con Persistencia en JSON
 
-Aplicación de línea de comandos desarrollada en Python para gestionar tareas con persistencia en archivo JSON.
+Aplicación de consola desarrollada en Python que permite gestionar tareas con persistencia en archivo JSON.
 
-Permite agregar, listar, completar y eliminar tareas manteniendo los datos guardados entre ejecuciones.
-
-Proyecto creado con fines educativos y de portfolio, aplicando separación por capas y buenas prácticas de organización del código.
+Proyecto orientado a aplicar buenas prácticas de arquitectura, modularización, persistencia de datos y testing automatizado.
 
 ---
 
 ## Funcionalidades
 
-- Agregar tareas
-- Listar tareas
-- Marcar tareas como completadas
-- Eliminar tareas
-- Guardado automático en `tareas.json`
-- Arquitectura modular (core / models / utils)
+-Agregar tareas
+-Eliminar tareas
+-Marcar tareas como completadas
+-Listar tareas
+-Filtrar por:
+    -Estado (pendientes / completas)
+    -Prioridad (baja / media / alta)
+-Ordenar tareas por prioridad
+-Persistencia automática en archivo JSON
+-Tests automatizados con pytest
 
 ---
 
-## Tecnologías
+## Estructura del Proyecto
 
-- Python 3.8+
-- CLI (terminal)
-- JSON para persistencia de datos
-
----
-
-## Estructura del proyecto
-
-gestor_tareas/
-src/
-main.py # interfaz CLI
-core/ # lógica de negocio
-models/ # entidades del dominio
-utils/ # formateo y persistencia
-
-### Descripción de capas
-
-- **models** → define la entidad `Tarea`
-- **core** → reglas de negocio (agregar, completar, eliminar)
-- **utils** → impresión y guardado/carga JSON
-- **main** → interacción con el usuario
-
-Separar responsabilidades facilita mantenimiento, testing y escalabilidad.
+gestor_tareas_json/
+│
+├── src/
+│   ├── core/
+│   │   └── logic.py
+│   ├── models/
+│   │   └── tarea.py
+│   ├── utils/
+│   │   ├── persistencia.py
+│   │   └── formato.py
+│   └── main.py
+│
+├── test/
+│   └── test_logic.py
+│
+├── tareas.json
+└── README.md
 
 ---
 
 ## Instalación
 
-Opcionalmente crear entorno virtual:
+Clonar el repositorio:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate   # Linux / Mac
+git clone https://github.com/danir28/gestor-tareas-json.git
+cd gestor-tareas-json
+
+Crear entorno virtual:
+
+python3 -m venv venv
+source venv/bin/activate   # Mac/Linux
+
+instalar dependencias:
+
+pip install pytest
+
+---
+
+## Ejecución
+
+python3 -m src.main
+
+---
+
+## Tests
+
+Ejecutar los tests con:
+
+pytest
+
+---
+
+## Tecnologías utilizadas
+
+-Python 3
+-JSON
+-pytest
+-Git
+
+---
+
+## Objetivo del proyecto
+
+Aplicar conceptos de:
+
+-Programación orientada a objetos
+-Modularización
+-Persistencia de datos
+-Testing automatizado
+-Control de versiones
