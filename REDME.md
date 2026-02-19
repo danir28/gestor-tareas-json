@@ -8,16 +8,16 @@ Proyecto orientado a aplicar buenas prácticas de arquitectura, modularización,
 
 ## Funcionalidades
 
--Agregar tareas
--Eliminar tareas
--Marcar tareas como completadas
--Listar tareas
--Filtrar por:
-    -Estado (pendientes / completas)
-    -Prioridad (baja / media / alta)
--Ordenar tareas por prioridad
--Persistencia automática en archivo JSON
--Tests automatizados con pytest
+- Agregar tareas
+- Eliminar tareas
+- Marcar tareas como completadas
+- Listar tareas
+- Filtrar por:
+    - Estado (pendientes / completas)
+    - Prioridad (baja / media / alta)
+- Ordenar tareas por prioridad
+- Persistencia automática en archivo JSON
+- Tests automatizados con pytest
 
 ---
 
@@ -89,10 +89,10 @@ pytest
 
 ## Tecnologías utilizadas
 
--Python 3
--JSON
--pytest
--Git
+- Python 3
+- JSON
+- pytest
+- Git
 
 ---
 
@@ -100,8 +100,8 @@ pytest
 
 Aplicar conceptos de:
 
--Programación orientada a objetos
--Modularización
--Persistencia de datos
--Testing automatizado
--Control de versiones
+- Programación orientada a objetos
+- Modularización
+- Persistencia de datos
+- Testing automatizado
+- Control de versiones
